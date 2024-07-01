@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            text-align: center;
+            font-family: monospace;
+        }
+
+        .userinput {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .userbuttons {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            background-color: #252D44;
+            padding: 5px;
+            border-radius: 10px;
+        }
+
+        body {
+            background-color: #394461;
+        }
+
+        input {
+            background-color: #EAE3DB;
+            width: 90%;
+            border-radius: 10px;
+            font-size: 17px;
+        }
+
+        button {
+            background-color: #D13F30;
+            color: #FDFEFE;
+            border-radius: 10px;
+            font-size: 15px;
+            width: 90%;
+            margin: 3px;
+        }
+
+        h3 {
+            background-color: #181F32;
+            color: #FDFEFE;
+            font-size: 25px;
+            border-radius: 10px;
+            text-align: right;
+            padding: 5px;
+        }
+
+        .calc {
+            max-width: 400px;
+            margin: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="calc">
+        <h3 id="result">0</h3>
+        <div class="container">
+            <div class="userinput">
+                <input type="text" placeholder="0" id="num1" style="margin-bottom: 10px;">
+                <input type="text" placeholder="0" id="num2">
+            </div>
+            <div class="userbuttons">
+                <button onclick="add()">Add</button>
+                <button onclick="subtract()">Subtract</button>
+                <button onclick="mutiply()">Mutiply</button>
+                <button onclick="divide()">Divide</button>
+            </div>
+        </div>
+    </div>
+    <script>
+        function add() {
+            let firstnum = parseFloat(document.getElementById("num1").value);
+            let secondnum = parseFloat(document.getElementById("num2").value);
+            let result = firstnum + secondnum;
+            document.getElementById("result").innerHTML = result;
+        }
+        function subtract() {
+            let firstnum = parseFloat(document.getElementById("num1").value);
+            let secondnum = parseFloat(document.getElementById("num2").value);
+            let result = firstnum - secondnum;
+            document.getElementById("result").innerHTML = result;
+        }
+        function mutiply() {
+            let firstnum = parseFloat(document.getElementById("num1").value);
+            let secondnum = parseFloat(document.getElementById("num2").value);
+            let result = firstnum * secondnum;
+            document.getElementById("result").innerHTML = result;
+        }
+        function divide() {
+            let firstnum = parseFloat(document.getElementById("num1").value);
+            let secondnum = parseFloat(document.getElementById("num2").value);
+            let result = firstnum / secondnum;
+            document.getElementById("result").innerHTML = result;
+        }
+    </script>
+</body>
+
+</html>
